@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>咖啡品鉴指南 | Coffee Connoisseur</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-coffee"></i>
+                <span>Coffee Connoisseur</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> 首页</a></li>
+                <li><a href="#beans"><i class="fas fa-seedling"></i> 咖啡豆</a></li>
+                <li><a href="#process"><i class="fas fa-mortar-pestle"></i> 制作工艺</a></li>
+                <li><a href="#tasting"><i class="fas fa-wine-glass-alt"></i> 品鉴指南</a></li>
+                <li><a href="#tools"><i class="fas fa-tools"></i> 咖啡工具</a></li>
+                <li><a href="#game"><i class="fas fa-gamepad"></i> 小游戏</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> 联系我们</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> 关于</a></li>
+            </ul>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">探索咖啡的世界</h1>
+            <p class="hero-subtitle">从产地到杯中的艺术之旅</p>
+            <p class="hero-description">深入了解不同咖啡豆的独特风味、制作工艺与专业品鉴方法</p>
+            <a href="#beans" class="btn-primary">开始探索</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- 咖啡豆介绍 -->
+    <section id="beans" class="section">
+        <div class="container">
+            <h2 class="section-title">咖啡豆品种</h2>
+            <p class="section-subtitle">探索世界各地的精品咖啡豆</p>
+            
+            <div class="beans-grid">
+                <!-- 阿拉比卡 -->
+                <div class="bean-card" data-bean="arabica">
+                    <div class="bean-image">
+                        <img src="https://images.unsplash.com/photo-1587734195507-6f5e8a2543c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="阿拉比卡咖啡豆" loading="lazy">
+                        <span class="bean-badge">精品</span>
+                    </div>
+                    <div class="bean-content">
+                        <h3 class="bean-name">阿拉比卡 Arabica</h3>
+                        <div class="bean-meta">
+                            <span class="bean-origin"><i class="fas fa-globe-americas"></i> 埃塞俄比亚、巴西、哥伦比亚</span>
+                            <span class="bean-altitude"><i class="fas fa-mountain"></i> 900-2000米</span>
+                        </div>
+                        <p class="bean-description">最受欢迎的咖啡品种，占全球产量的60-70%。风味复杂，酸度明亮，带有花果香气。</p>
+                        <div class="bean-flavors">
+                            <span class="flavor-tag">花果香</span>
+                            <span class="flavor-tag">柑橘酸</span>
+                            <span class="flavor-tag">巧克力</span>
+                            <span class="flavor-tag">坚果</span>
+                        </div>
+                        <button class="btn-outline bean-detail-btn">了解更多</button>
+                    </div>
+                </div>
+
+                <!-- 罗布斯塔 -->
+                <div class="bean-card" data-bean="robusta">
+                    <div class="bean-image">
+                        <img src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="罗布斯塔咖啡豆" loading="lazy">
+                        <span class="bean-badge">浓郁</span>
+                    </div>
+                    <div class="bean-content">
+                        <h3 class="bean-name">罗布斯塔 Robusta</h3>
+                        <div class="bean-meta">
+                            <span class="bean-origin"><i class="fas fa-globe-asia"></i> 越南、印度、印度尼西亚</span>
+                            <span class="bean-altitude"><i class="fas fa-mountain"></i> 200-800米</span>
+                        </div>
+                        <p class="bean-description">咖啡因含量较高，口感浓郁醇厚，带有独特的坚果和巧克力风味，常用于意式拼配。</p>
+                        <div class="bean-flavors">
+                            <span class="flavor-tag">坚果</span>
+                            <span class="flavor-tag">巧克力</span>
+                            <span class="flavor-tag">焦糖</span>
+                            <span class="flavor-tag">木质香</span>
+                        </div>
+                        <button class="btn-outline bean-detail-btn">了解更多</button>
+                    </div>
+                </div>
+
+                <!-- 利比里卡 -->
+                <div class="bean-card" data-bean="liberica">
+                    <div class="bean-image">
+                        <img src="https://images.unsplash.com/photo-1510707577719-ae7c9b788690?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="利比里卡咖啡豆" loading="lazy">
+                        <span class="bean-badge">稀有</span>
+                    </div>
+                    <div class="bean-content">
+                        <h3 class="bean-name">利比里卡 Liberica</h3>
+                        <div class="bean-meta">
+                            <span class="bean-origin"><i class="fas fa-globe-africa"></i> 菲律宾、马来西亚</span>
+                            <span class="bean-altitude"><i class="fas fa-mountain"></i> 200-600米</span>
+                        </div>
+                        <p class="bean-description">稀有品种，豆形较大，风味独特，带有烟熏、木质和花香气味，口感醇厚。</p>
+                        <div class="bean-flavors">
+                            <span class="flavor-tag">烟熏</span>
+                            <span class="flavor-tag">木质香</span>
+                            <span class="flavor-tag">花香</span>
+                            <span class="flavor-tag">香料</span>
+                        </div>
+                        <button class="btn-outline bean-detail-btn">了解更多</button>
+                    </div>
+                </div>
+
+                <!-- 埃塞俄比亚耶加雪菲 -->
+                <div class="bean-card" data-bean="yirgacheffe">
+                    <div class="bean-image">
+                        <img src="https://images.unsplash.com/photo-1510707577719-ae7c9b788690?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="耶加雪菲咖啡豆" loading="lazy">
+                        <span class="bean-badge">特选</span>
+                    </div>
+                    <div class="bean-content">
+                        <h3 class="bean-name">耶加雪菲 Yirgacheffe</h3>
+                        <div class="bean-meta">
+                            <span class="bean-origin"><i class="fas fa-globe-africa"></i> 埃塞俄比亚</span>
+                            <span class="bean-altitude"><i class="fas fa-mountain"></i> 1700-2200米</span>
+                        </div>
+                        <p class="bean-description">被誉为咖啡中的"香槟"，具有明亮的柑橘酸度、茉莉花香和茶感余韵。</p>
+                        <div class="bean-flavors">
+                            <span class="flavor-tag">柑橘</span>
+                            <span class="flavor-tag">茉莉花</span>
+                            <span class="flavor-tag">柠檬</span>
+                            <span class="flavor-tag">红茶</span>
+                        </div>
+                        <button class="btn-outline bean-detail-btn">了解更多</button>
+                    </div>
+
+        </div>
+    </section>
+
+    <!-- 制作工艺 -->
+    <section id="process" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">咖啡制作工艺</h2>
+            <p class="section-subtitle">从咖啡豆到完美杯中的每一步</p>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>采摘与处理</h3>
+                        <p>手工采摘成熟的咖啡樱桃，通过日晒、水洗或蜜处理等方法去除果肉，得到咖啡生豆。</p>
+                        <ul class="step-details">
+                            <li><strong>日晒法：</strong>风味浓郁，带有果香</li>
+                            <li><strong>水洗法：</strong>口感干净，酸度明亮</li>
+                            <li><strong>蜜处理：</strong>甜感突出，口感顺滑</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>烘焙艺术</h3>
+                        <p>通过精确的温度控制，将生豆转化为风味丰富的熟豆，不同的烘焙程度带来不同的风味特征。</p>
+                        <div class="roast-levels">
+                            <div class="roast-level">
+                                <span class="roast-name">浅焙</span>
+                                <div class="roast-bar">
+                                    <div class="roast-fill" style="width: 30%; background-color: #C4A484;"></div>
+                                </div>
+                                <span class="roast-desc">果酸明显，花香突出</span>
+                            </div>
+                            <div class="roast-level">
+                                <span class="roast-name">中焙</span>
+                                <div class="roast-bar">
+                                    <div class="roast-fill" style="width: 60%; background-color: #8B4513;"></div>
+                                </div>
+                                <span class="roast-desc">酸甜平衡，坚果风味</span>
+                            </div>
+                            <div class="roast-level">
+                                <span class="roast-name">深焙</span>
+                                <div class="roast-bar">
+                                    <div class="roast-fill" style="width: 90%; background-color: #654321;"></div>
+                                </div>
+                                <span class="roast-desc">醇厚浓郁，巧克力风味</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>研磨与萃取</h3>
+                        <p>根据不同的冲泡方式调整研磨粗细，通过精确的水温、时间和粉水比萃取咖啡风味。</p>
+                        <div class="brewing-methods">
+                            <div class="method">
+                                <i class="fas fa-filter"></i>
+                                <span>手冲</span>
+                            </div>
+                            <div class="method">
+                                <i class="fas fa-tint"></i>
+                                <span>冷萃</span>
+                            </div>
+                            <div class="method">
+                                <i class="fas fa-fire"></i>
+                                <span>意式</span>
+                            </div>
+                            <div class="method">
+                                <i class="fas fa-flask"></i>
+                                <span>虹吸</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 品鉴指南 -->
+    <section id="tasting" class="section">
+        <div class="container">
+            <h2 class="section-title">咖啡品鉴指南</h2>
+            <p class="section-subtitle">专业咖啡师教你如何品鉴咖啡</p>
+            
+            <div class="tasting-grid">
+                <div class="tasting-card">
+                    <div class="tasting-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>视觉评估</h3>
+                    <p>观察咖啡的色泽、清澈度和油脂层。优质咖啡通常有明亮的色泽和适中的油脂。</p>
+                    <ul>
+                        <li><strong>浅焙：</strong>浅棕色，类似肉桂</li>
+                        <li><strong>中焙：</strong>中等棕色，类似牛奶巧克力</li>
+                        <li><strong>深焙：</strong>深棕色至黑色，表面有油脂光泽</li>
+                    </ul>
+                </div>
+                
+                <div class="tasting-card">
+                    <div class="tasting-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>嗅觉体验</h3>
+                    <p>闻咖啡的干香和湿香，识别花果、坚果、巧克力等香气层次。</p>
+                    <ul>
+                        <li><strong>干香：</strong>研磨后的香气</li>
+                        <li><strong>湿香：</strong>冲泡后的香气</li>
+                        <li><strong>余韵香：</strong>饮用后的鼻腔香气</li>
+                    </ul>
+                </div>
+                
+                <div class="tasting-card">
+                    <div class="tasting-icon">
+                        <i class="fas fa-tongue"></i>
+                    </div>
+                    <h3>味觉分析</h3>
+                    <p>品尝咖啡的酸度、甜度、苦味、醇厚度和风味层次。</p>
+                    <ul>
+                        <li><strong>酸度：</strong>明亮或柔和</li>
+                        <li><strong>甜度：</strong>焦糖、蜂蜜或水果甜</li>
+                        <li><strong>醇厚度：</strong>轻盈、中等或厚重</li>
+                        <li><strong>余韵：</strong>持久或短暂</li>
+                    </ul>
+                </div>
+                
+                <div class="tasting-card">
+                    <div class="tasting-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>评分标准</h3>
+                    <p>使用SCAA（精品咖啡协会）评分标准评估咖啡品质。</p>
+                    <div class="scoring">
+                        <div class="score-item">
+                            <span>香气</span>
+                            <div class="score-bar"><div class="score-fill" style="width: 90%;"></div></div>
+                            <span>9/10</span>
+                        </div>
+                        <div class="score-item">
+                            <span>风味</span>
+                            <div class="score-bar"><div class="score-fill" style="width: 85%;"></div></div>
+                            <span>8.5/10</span>
+                        </div>
+                        <div class="score-item">
+                            <span>余韵</span>
+                            <div class="score-bar"><div class="score-fill" style="width: 88%;"></div></div>
+                            <span>8.8/10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tasting-tips">
+                <h3><i class="fas fa-lightbulb"></i> 品鉴小贴士</h3>
+                <div class="tips-grid">
+                    <div class="tip">
+                        <h4>温度控制</h4>
+                        <p>在不同温度下品尝咖啡（热、温、凉），风味会发生变化。</p>
+                    </div>
+                    <div class="tip">
+                        <h4>清洁味蕾</h4>
+                        <p>品鉴前用清水漱口，避免食物残留影响判断。</p>
+                    </div>
+                    <div class="tip">
+                        <h4>记录感受</h4>
+                        <p>使用风味轮记录你的品鉴体验，建立个人风味记忆库。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于 -->
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">关于我们</h2>
+                    <p>咖啡品鉴指南是一个致力于传播咖啡文化的平台。我们相信每一杯咖啡都有其独特的故事，从咖啡农的辛勤劳作到烘焙师的精心制作，再到咖啡师的完美呈现。</p>
+                    <p>我们的使命是让更多人了解咖啡的丰富多样性，学习专业的品鉴方法，享受咖啡带来的美好体验。</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">咖啡品种</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">制作教程</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">品鉴记录</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <!-- 咖啡相关图标装饰 -->
+                    <div class="coffee-icons">
+                        <i class="fas fa-coffee"></i>
+                        <i class="fas fa-seedling"></i>
+                        <i class="fas fa-mug-hot"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 咖啡工具 -->
+    <section id="tools" class="section tools-section">
+        <div class="container">
+            <h2 class="section-title">咖啡工具</h2>
+            <p class="section-subtitle">专业工具提升咖啡体验</p>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-image">
+                        <i class="fas fa-weight"></i>
+                    </div>
+                    <h3>电子秤</h3>
+                    <p>精确测量咖啡豆和水的比例，确保每次冲泡的一致性。</p>
+                    <div class="tool-specs">
+                        <span><i class="fas fa-bullseye"></i> 精度: 0.1g</span>
+                        <span><i class="fas fa-battery-full"></i> 续航: 30天</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-image">
+                        <i class="fas fa-thermometer"></i>
+                    </div>
+                    <h3>温度计</h3>
+                    <p>精确控制水温，不同咖啡豆需要不同的冲泡温度。</p>
+                    <div class="tool-specs">
+                        <span><i class="fas fa-temperature-high"></i> 范围: 0-100°C</span>
+                        <span><i class="fas fa-tachometer-alt"></i> 响应: 3秒</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-image">
+                        <i class="fas fa-hourglass"></i>
+                    </div>
+                    <h3>计时器</h3>
+                    <p>精确控制冲泡时间，影响咖啡的萃取程度和风味。</p>
+                    <div class="tool-specs">
+                        <span><i class="fas fa-clock"></i> 精度: 0.1秒</span>
+                        <span><i class="fas fa-memory"></i> 记忆: 10组</span>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-image">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>手冲壶</h3>
+                    <p>细长壶嘴设计，实现均匀注水和精确水流控制。</p>
+                    <div class="tool-specs">
+                        <span><i class="fas fa-flask"></i> 容量: 600ml</span>
+                        <span><i class="fas fa-weight"></i> 材质: 不锈钢</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tools-tips">
+                <h3><i class="fas fa-tools"></i> 工具使用建议</h3>
+                <div class="tips-list">
+                    <div class="tip-item">
+                        <h4>黄金比例</h4>
+                        <p>咖啡豆与水的比例为1:15-1:18，根据个人口味调整。</p>
+                    </div>
+                    <div class="tip-item">
+                        <h4>水温控制</h4>
+                        <p>浅焙咖啡：92-96°C，深焙咖啡：88-92°C。</p>
+                    </div>
+                    <div class="tip-item">
+                        <h4>冲泡时间</h4>
+                        <p>手冲咖啡：2-3分钟，冷萃咖啡：12-24小时。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 咖啡豆详情模态框 -->
+    <div id="beanModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">咖啡豆详情</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="bean-detail-container">
+                    <!-- 内容由JavaScript动态填充 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 购买确认模态框 -->
+    <div id="purchaseModal" class="purchase-modal">
+        <div class="purchase-modal-content">
+            <div class="purchase-modal-header">
+                <h3 class="purchase-modal-title">确认购买</h3>
+                <button class="purchase-modal-close">&times;</button>
+            </div>
+            <div class="purchase-modal-body">
+                <div class="purchase-item">
+                    <div class="purchase-item-image">
+                        <img id="purchaseItemImage" src="" alt="商品图片">
+                    </div>
+                    <div class="purchase-item-info">
+                        <h4 id="purchaseItemName">商品名称</h4>
+                        <p id="purchaseItemDesc">商品描述</p>
+                        <div class="purchase-item-price" id="purchaseItemPrice">价格</div>
+                    </div>
+                </div>
+                <p>确认使用优惠券购买此商品吗？购买后将生成模拟订单。</p>
+            </div>
+            <div class="purchase-modal-footer">
+                <div class="purchase-coupon-info">
+                    <i class="fas fa-ticket-alt"></i>
+                    <span>需要 <span id="purchaseCouponCost">0</span> 张优惠券</span>
+                </div>
+                <button class="purchase-confirm-btn" id="purchaseConfirmBtn">确认购买</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 咖啡种植小游戏 -->
+    <section id="game" class="section game-section">
+        <div class="container">
+            <h2 class="section-title">咖啡种植小游戏</h2>
+            <p class="section-subtitle">体验从种子到杯中的乐趣</p>
+            
+            <div class="game-container">
+                <div class="game-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>咖啡豆</h4>
+                            <div class="stat-value" id="beanCount">0</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>金币</h4>
+                            <div class="stat-value" id="coinCount">100</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>优惠券</h4>
+                            <div class="stat-value" id="couponCount">0</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>等级</h4>
+                            <div class="stat-value" id="levelCount">1</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-main">
+                    <div class="game-field">
+                        <div class="coffee-plant" id="coffeePlant">
+                            <div class="plant-visual">
+                                <div class="plant-image" id="plantImage">
+                                    <img src="https://images.unsplash.com/photo-1510707577719-ae7c9b788690?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="咖啡种子" id="plantImg" loading="lazy">
+                                </div>
+                                <div class="plant-stage" id="plantStage">
+                                    <span class="stage-badge">种子</span>
+                                </div>
+                            </div>
+                            <div class="plant-info">
+                                <h4 id="plantStatus">咖啡种子</h4>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="growthProgress" style="width: 0%;"></div>
+                                </div>
+                                <div class="plant-stats">
+                                    <span><i class="fas fa-tint"></i> 水分: <span id="waterLevel">50</span>/100</span>
+                                    <span><i class="fas fa-leaf"></i> 营养: <span id="nutrientLevel">50</span>/100</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="game-actions">
+                            <button class="game-btn water-btn" id="waterBtn">
+                                <i class="fas fa-tint"></i>
+                                <span>浇水 (-5金币)</span>
+                            </button>
+                            <button class="game-btn fertilize-btn" id="fertilizeBtn">
+                                <i class="fas fa-leaf"></i>
+                                <span>施肥 (-10金币)</span>
+                            </button>
+                            <button class="game-btn harvest-btn" id="harvestBtn" disabled>
+                                <i class="fas fa-hand-paper"></i>
+                                <span>收获咖啡豆</span>
+                            </button>
+                            <button class="game-btn sell-btn" id="sellBtn" disabled>
+                                <i class="fas fa-shopping-bag"></i>
+                                <span>出售 (+20金币)</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="game-shop">
+                        <h3><i class="fas fa-store"></i> 商店</h3>
+                        <div class="shop-items">
+                            <div class="shop-item">
+                                <div class="shop-item-icon">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <div class="shop-item-info">
+                                    <h5>咖啡种子</h5>
+                                    <p>种植新的咖啡树</p>
+                                </div>
+                                <button class="shop-btn buy-seed-btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>购买 (30金币)</span>
+                                </button>
+                            </div>
+                            
+                            <div class="shop-item">
+                                <div class="shop-item-icon">
+                                    <i class="fas fa-wine-bottle"></i>
+                                </div>
+                                <div class="shop-item-info">
+                                    <h5>高级肥料</h5>
+                                    <p>加速生长 +15营养</p>
+                                </div>
+                                <button class="shop-btn buy-fertilizer-btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>购买 (25金币)</span>
+                                </button>
+                            </div>
+                            
+                            <div class="shop-item">
+                                <div class="shop-item-icon">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <div class="shop-item-info">
+                                    <h5>生长激素</h5>
+                                    <p>立即完成当前阶段</p>
+                                </div>
+                                <button class="shop-btn buy-hormone-btn">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>购买 (50金币)</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="game-shop">
+                        <h3><i class="fas fa-gift"></i> 兑换商店</h3>
+                        <div class="shop-items">
+                            <div class="shop-item">
+                                <div class="shop-item-icon">
+                                    <i class="fas fa-ticket-alt"></i>
+                                </div>
+                                <div class="shop-item-info">
+                                    <h5>兑换优惠券</h5>
+                                    <p>50个咖啡豆兑换1张优惠券</p>
+                                    <div class="coupon-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" id="couponProgress" style="width: 0%;"></div>
+                                        </div>
+                                        <span id="couponProgressText">0/50</span>
+                                    </div>
+                                </div>
+                                <button class="shop-btn exchange-coupon-btn" id="exchangeCouponBtn" disabled>
+                                    <i class="fas fa-exchange-alt"></i>
+                                    <span>兑换</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-store">
+                    <h3><i class="fas fa-shopping-cart"></i> 咖啡商店</h3>
+                    <p class="store-description">使用优惠券购买我们的精选咖啡产品</p>
+                    
+                    <div class="store-items">
+                        <div class="store-item">
+                            <div class="store-item-image">
+                                <img src="https://images.unsplash.com/photo-1587734195507-6f5e8a2543c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="阿拉比卡咖啡豆" loading="lazy">
+                            </div>
+                            <div class="store-item-info">
+                                <h4>精品阿拉比卡咖啡豆</h4>
+                                <p class="store-item-desc">来自埃塞俄比亚的精品咖啡豆，带有花果香气和明亮的柑橘酸度。</p>
+                                <div class="store-item-price">
+                                    <span class="original-price">¥128</span>
+                                    <span class="discount-price">¥98 <span class="discount-badge">-23%</span></span>
+                                </div>
+                                <div class="store-item-coupon">
+                                    <i class="fas fa-ticket-alt"></i>
+                                    <span>需1张优惠券</span>
+                                </div>
+                            </div>
+                            <button class="store-btn buy-product-btn" data-product="arabica">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span>立即购买</span>
+                            </button>
+                        </div>
+                        
+                        <div class="store-item">
+                            <div class="store-item-image">
+                                <img src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="罗布斯塔咖啡豆" loading="lazy">
+                            </div>
+                            <div class="store-item-info">
+                                <h4>浓郁罗布斯塔咖啡豆</h4>
+                                <p class="store-item-desc">越南产罗布斯塔豆，口感浓郁醇厚，带有坚果和巧克力风味。</p>
+                                <div class="store-item-price">
+                                    <span class="original-price">¥98</span>
+                                    <span class="discount-price">¥78 <span class="discount-badge">-20%</span></span>
+                                </div>
+                                <div class="store-item-coupon">
+                                    <i class="fas fa-ticket-alt"></i>
+                                    <span>需1张优惠券</span>
+                                </div>
+                            </div>
+                            <button class="store-btn buy-product-btn" data-product="robusta">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span>立即购买</span>
+                            </button>
+                        </div>
+                        
+                        <div class="store-item">
+                            <div class="store-item-image">
+                                <img src="https://images.unsplash.com/photo-1510707577719-ae7c9b788690?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="咖啡礼盒" loading="lazy">
+                            </div>
+                            <div class="store-item-info">
+                                <h4>精品咖啡体验礼盒</h4>
+                                <p class="store-item-desc">包含3种不同产地的精品咖啡豆和手冲壶套装，完美咖啡体验。</p>
+                                <div class="store-item-price">
+                                    <span class="original-price">¥298</span>
+                                    <span class="discount-price">¥228 <span class="discount-badge">-23%</span></span>
+                                </div>
+                                <div class="store-item-coupon">
+                                    <i class="fas fa-ticket-alt"></i>
+                                    <span>需2张优惠券</span>
+                                </div>
+                            </div>
+                            <button class="store-btn buy-product-btn" data-product="giftbox">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span>立即购买</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="store-notice">
+                        <p><i class="fas fa-info-circle"></i> 注意：优惠券仅限本商店使用，购买后将通过模拟订单系统处理。</p>
+                    </div>
+                </div>
+                
+                <div class="game-instructions">
+                    <h3><i class="fas fa-gamepad"></i> 游戏说明</h3>
+                    <div class="instructions-content">
+                        <p><strong>目标：</strong>通过种植和收获咖啡豆赚取金币和优惠券，兑换精美咖啡产品！</p>
+                        <div class="instruction-steps">
+                            <div class="step">
+                                <span class="step-number">1</span>
+                                <p>种植咖啡树并收获咖啡豆</p>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">2</span>
+                                <p>每50个咖啡豆可兑换1张优惠券</p>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">3</span>
+                                <p>使用优惠券在咖啡商店购买产品</p>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">4</span>
+                                <p>出售咖啡豆赚取金币购买更好的工具</p>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">5</span>
+                                <p>升级农场提高生产效率</p>
+                            </div>
+                        </div>
+                        <p class="game-tip"><i class="fas fa-lightbulb"></i> 小贴士：保持植物健康，每次收获可获得更多咖啡豆！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">联系我们</h2>
+            <p class="section-subtitle">有任何问题或建议？欢迎与我们联系</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>地址</h4>
+                            <p>上海市黄浦区咖啡文化街123号</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>电话</h4>
+                            <p>+86 21 1234 5678</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>邮箱</h4>
+                            <p>info@coffeeconnoisseur.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>营业时间</h4>
+                            <p>周一至周五: 8:00 - 22:00</p>
+                            <p>周末: 9:00 - 23:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>发送消息</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="电子邮箱" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="主题">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="您的消息..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">发送消息</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-coffee"></i> Coffee Connoisseur</h3>
+                    <p>探索咖啡的无限可能，品味生活的每一刻。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><

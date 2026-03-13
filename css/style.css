@@ -1,0 +1,2027 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* 配色方案 - 黑白棕简约风格 */
+    --color-black: #1a1a1a;
+    --color-dark: #2d2d2d;
+    --color-gray: #4a4a4a;
+    --color-light-gray: #f5f5f5;
+    --color-white: #ffffff;
+    --color-brown-dark: #3e2723;
+    --color-brown: #5d4037;
+    --color-brown-light: #8d6e63;
+    --color-brown-lighter: #d7ccc8;
+    --color-accent: #795548;
+    
+    /* 字体 */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Noto Sans SC', sans-serif;
+    
+    /* 间距 */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+    
+    /* 圆角 */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    
+    /* 阴影 */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-black);
+    background-color: var(--color-white);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+/* 排版 */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-brown-dark);
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.25rem; }
+
+p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-gray);
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--color-brown-light);
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.1rem;
+}
+
+.bg-light {
+    background-color: var(--color-light-gray);
+}
+
+/* 按钮样式 */
+.btn-primary, .btn-outline {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--color-brown);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-brown-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-brown);
+    border: 2px solid var(--color-brown);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-brown);
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+/* 导航栏 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-brown-dark);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo i {
+    margin-right: 10px;
+    color: var(--color-accent);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-gray);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links a:hover {
+    color: var(--color-brown);
+}
+
+.nav-links a i {
+    font-size: 0.9rem;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-brown);
+    cursor: pointer;
+}
+
+/* 英雄区域 */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+    position: relative;
+    margin-top: 70px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: var(--spacing-lg);
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-white);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-brown-lighter);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-white);
+    opacity: 0.9;
+}
+
+/* 咖啡豆卡片 */
+.beans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.bean-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bean-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.bean-image {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, var(--color-brown), var(--color-brown-dark));
+}
+
+.bean-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.bean-card:hover .bean-image img {
+    transform: scale(1.1);
+}
+
+.bean-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--color-white);
+    color: var(--color-brown);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.bean-content {
+    padding: var(--spacing-md);
+}
+
+.bean-name {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-brown-dark);
+}
+
+.bean-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-brown-light);
+    font-size: 0.9rem;
+}
+
+.bean-meta i {
+    margin-right: 5px;
+}
+
+.bean-description {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gray);
+}
+
+.bean-flavors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: var(--spacing-md);
+}
+
+.flavor-tag {
+    background-color: var(--color-brown-lighter);
+    color: var(--color-brown);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* 制作工艺时间线 */
+.process-timeline {
+    max-width: 800px;
+    margin: var(--spacing-lg) auto;
+}
+
+.process-step {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+}
+
+.process-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 60px;
+    bottom: -60px;
+    width: 2px;
+    background-color: var(--color-brown-lighter);
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-brown);
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-brown-dark);
+}
+
+.step-details {
+    margin-top: var(--spacing-sm);
+    padding-left: 20px;
+}
+
+.step-details li {
+    margin-bottom: 8px;
+    color: var(--color-gray);
+}
+
+.roast-levels {
+    margin-top: var(--spacing-sm);
+}
+
+.roast-level {
+    margin-bottom: var(--spacing-sm);
+}
+
+.roast-name {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--color-brown);
+}
+
+.roast-bar {
+    height: 8px;
+    background-color: var(--color-light-gray);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.roast-fill {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.roast-desc {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: var(--color-gray);
+}
+
+.brewing-methods {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.method {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-brown);
+}
+
+.method i {
+    font-size: 2rem;
+}
+
+/* 品鉴指南 */
+.tasting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.tasting-card {
+    background: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease;
+}
+
+.tasting-card:hover {
+    transform: translateY(-5px);
+}
+
+.tasting-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-brown-lighter);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-brown);
+    font-size: 1.5rem;
+}
+
+.tasting-card h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-brown-dark);
+}
+
+.tasting-card ul {
+    margin-top: var(--spacing-sm);
+    padding-left: 20px;
+}
+
+.tasting-card li {
+    margin-bottom: 8px;
+    color: var(--color-gray);
+    font-size: 0.95rem;
+}
+
+.scoring {
+    margin-top: var(--spacing-sm);
+}
+
+.score-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.score-item span:first-child {
+    width: 60px;
+    font-weight: 500;
+    color: var(--color-brown);
+}
+
+.score-bar {
+    flex: 1;
+    height: 6px;
+    background-color: var(--color-light-gray);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.score-fill {
+    height: 100%;
+    background-color: var(--color-brown);
+    border-radius: 3px;
+}
+
+.score-item span:last-child {
+    width: 40px;
+    text-align: right;
+    font-weight: 600;
+    color: var(--color-brown-dark);
+}
+
+.tasting-tips {
+    background: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.tasting-tips h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-brown-dark);
+}
+
+.tasting-tips h3 i {
+    color: var(--color-accent);
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.tip {
+    padding: var(--spacing-sm);
+    border-left: 3px solid var(--color-brown);
+}
+
+.tip h4 {
+    margin-bottom: 8px;
+    color: var(--color-brown);
+}
+
+.tip p {
+    color: var(--color-gray);
+    font-size: 0.95rem;
+}
+
+/* 关于部分 */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.about-stats {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-brown);
+    line-height: 1;
+}
+
+.stat-label {
+    display: block;
+    margin-top: 5px;
+    color: var(--color-gray);
+    font-size: 0.9rem;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+}
+
+.coffee-icons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.coffee-icons i {
+    font-size: 4rem;
+    color: var(--color-brown-lighter);
+    transition: color 0.3s ease;
+}
+
+.coffee-icons i:hover {
+    color: var(--color-brown);
+}
+
+/* 页脚 */
+.footer {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: var(--spacing-xl) 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.footer-section h3 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-section p {
+    color: var(--color-brown-lighter);
+    margin-bottom: var(--spacing-md);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-gray);
+    color: var(--color-white);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--color-brown);
+    transform: translateY(-3px);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--color-brown-lighter);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-links a:hover {
+    color: var(--color-white);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-gray);
+    color: var(--color-brown-lighter);
+    font-size: 0.9rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    
+    .hero-title { font-size: 3rem; }
+    .hero-subtitle { font-size: 1.25rem; }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color-white);
+        flex-direction: column;
+        padding: var(--spacing-md);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-step {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .process-step:not(:last-child)::after {
+        left: 25px;
+        top: 50px;
+        bottom: -40px;
+    }
+    
+    .beans-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tasting-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-stats {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 2.5rem; }
+    .hero { margin-top: 60px; }
+    
+    .btn-primary, .btn-outline {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+    }
+    
+    .section {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .bean-card, .tasting-card {
+        padding: var(--spacing-sm);
+    }
+}
+
+/* 联系我们部分 */
+.contact-section {
+    background-color: var(--color-light-gray);
+    padding: var(--spacing-xl) 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-brown-lighter);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-brown);
+    font-size: 1.25rem;
+}
+
+.contact-details h4 {
+    color: var(--color-brown-dark);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.1rem;
+}
+
+.contact-details p {
+    color: var(--color-gray);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.contact-form {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-form h3 {
+    color: var(--color-brown-dark);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-brown-lighter);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-black);
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-brown);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* 咖啡工具部分 */
+.tools-section {
+    background-color: var(--color-white);
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.tool-card {
+    background-color: var(--color-light-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--color-brown-lighter);
+}
+
+.tool-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-brown);
+}
+
+.tool-image {
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-brown);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-md);
+    color: var(--color-white);
+    font-size: 2rem;
+}
+
+.tool-card h3 {
+    color: var(--color-brown-dark);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.3rem;
+}
+
+.tool-card p {
+    color: var(--color-gray);
+    margin-bottom: var(--spacing-md);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.tool-specs {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-brown-lighter);
+}
+
+.tool-specs span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--color-brown);
+    font-size: 0.85rem;
+}
+
+.tool-specs i {
+    color: var(--color-brown-light);
+}
+
+.tools-tips {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background-color: var(--color-light-gray);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--color-brown);
+}
+
+.tools-tips h3 {
+    color: var(--color-brown-dark);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.tools-tips h3 i {
+    color: var(--color-brown);
+}
+
+.tips-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.tip-item {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-brown-lighter);
+}
+
+.tip-item h4 {
+    color: var(--color-brown);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.1rem;
+}
+
+.tip-item p {
+    color: var(--color-gray);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* 咖啡豆详情模态框 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow-y: auto;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background-color: var(--color-white);
+    margin: 50px auto;
+    max-width: 900px;
+    width: 90%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-brown-lighter);
+}
+
+.modal-title {
+    color: var(--color-brown-dark);
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-gray);
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.modal-close:hover {
+    background-color: var(--color-light-gray);
+    color: var(--color-brown);
+}
+
+.modal-body {
+    padding: var(--spacing-lg);
+}
+
+/* 咖啡豆详情内容 */
+.bean-detail-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+}
+
+.bean-detail-image {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--color-brown), var(--color-brown-light));
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-size: 5rem;
+}
+
+.bean-detail-info h3 {
+    color: var(--color-brown-dark);
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.bean-detail-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-brown-lighter);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-brown);
+    font-size: 0.95rem;
+}
+
+.meta-item i {
+    color: var(--color-brown-light);
+}
+
+.bean-detail-description {
+    color: var(--color-gray);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+}
+
+.bean-detail-flavors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.flavor-tag-large {
+    background-color: var(--color-brown-lighter);
+    color: var(--color-brown);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* 品鉴建议 */
+.tasting-recommendations {
+    background-color: var(--color-light-gray);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    grid-column: 1 / -1;
+}
+
+.tasting-recommendations h4 {
+    color: var(--color-brown-dark);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.tasting-recommendations h4 i {
+    color: var(--color-brown);
+}
+
+.recommendation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.recommendation-item {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--color-brown);
+}
+
+.recommendation-item h5 {
+    color: var(--color-brown);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.1rem;
+}
+
+.recommendation-item p {
+    color: var(--color-gray);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* 咖啡豆图标 */
+.bean-icon {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 响应式设计 - 联系我们 */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .contact-icon {
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tips-list {
+        grid-template-columns: 1fr;
+    }
+    
+    /* 模态框响应式 */
+    .bean-detail-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .bean-detail-image {
+        height: 200px;
+    }
+    
+    .recommendation-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        margin: 20px auto;
+        width: 95%;
+    }
+}
+
+/* 咖啡种植小游戏 */
+.game-section {
+    background-color: var(--color-light-gray);
+    padding: var(--spacing-xl) 0;
+}
+
+.game-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.stat-item {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--color-brown), var(--color-brown-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-size: 1.5rem;
+}
+
+.stat-info h4 {
+    color: var(--color-gray);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    color: var(--color-brown-dark);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.game-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.game-field {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.coffee-plant {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+    border-radius: var(--radius-lg);
+    border: 2px dashed var(--color-brown-lighter);
+}
+
+.plant-visual {
+    position: relative;
+    margin-bottom: var(--spacing-md);
+}
+
+.plant-image {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--color-brown-lighter);
+    background: linear-gradient(135deg, #8B4513, #A0522D);
+}
+
+.plant-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.plant-stage {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-brown);
+    color: var(--color-white);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+}
+
+.plant-stage .stage-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.plant-info h4 {
+    color: var(--color-brown-dark);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.5rem;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: var(--color-brown-lighter);
+    border-radius: 5px;
+    margin-bottom: var(--spacing-md);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-brown), var(--color-brown-light));
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.plant-stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    color: var(--color-gray);
+    font-size: 0.9rem;
+}
+
+.plant-stats span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.plant-stats i {
+    color: var(--color-brown-light);
+}
+
+.game-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.game-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.game-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.water-btn {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.water-btn:hover:not(:disabled) {
+    background-color: #bbdefb;
+    transform: translateY(-3px);
+}
+
+.fertilize-btn {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+.fertilize-btn:hover:not(:disabled) {
+    background-color: #c8e6c9;
+    transform: translateY(-3px);
+}
+
+.harvest-btn {
+    background-color: #fff3e0;
+    color: #f57c00;
+}
+
+.harvest-btn:hover:not(:disabled) {
+    background-color: #ffe0b2;
+    transform: translateY(-3px);
+}
+
+.sell-btn {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.sell-btn:hover:not(:disabled) {
+    background-color: #e1bee7;
+    transform: translateY(-3px);
+}
+
+.game-shop {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.game-shop h3 {
+    color: var(--color-brown-dark);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.game-shop h3 i {
+    color: var(--color-brown);
+}
+
+.shop-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.shop-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--color-light-gray);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-brown-lighter);
+}
+
+.shop-item-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-brown-lighter);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-brown);
+    font-size: 1.25rem;
+}
+
+.shop-item-info {
+    flex: 1;
+}
+
+.shop-item-info h5 {
+    color: var(--color-brown-dark);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.shop-item-info p {
+    color: var(--color-gray);
+    font-size: 0.85rem;
+}
+
+.shop-btn {
+    padding: 8px 16px;
+    background-color: var(--color-brown);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.shop-btn:hover:not(:disabled) {
+    background-color: var(--color-brown-dark);
+    transform: translateY(-2px);
+}
+
+.shop-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.game-instructions {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--color-brown);
+}
+
+.game-instructions h3 {
+    color: var(--color-brown-dark);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.game-instructions h3 i {
+    color: var(--color-brown);
+}
+
+.instructions-content p {
+    color: var(--color-gray);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.instruction-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.step {
+    text-align: center;
+    padding: var(--spacing-md);
+    background-color: var(--color-light-gray);
+    border-radius: var(--radius-md);
+}
+
+.step-number {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-brown);
+    color: var(--color-white);
+    border-radius: 50%;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    line-height: 30px;
+}
+
+.step p {
+    color: var(--color-brown);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.game-tip {
+    background-color: #fff8e1;
+    border-left: 4px solid #ffb300;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    color: #5d4037 !important;
+    font-style: italic;
+}
+
+.game-tip i {
+    color: #ffb300;
+    margin-right: 8px;
+}
+
+/* 优惠券进度 */
+.coupon-progress {
+    margin-top: var(--spacing-sm);
+}
+
+.coupon-progress .progress-bar {
+    height: 8px;
+    margin-bottom: 5px;
+}
+
+.coupon-progress span {
+    font-size: 0.8rem;
+    color: var(--color-gray);
+    display: block;
+    text-align: center;
+}
+
+/* 咖啡商店 */
+.game-store {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--spacing-lg);
+    border-top: 4px solid var(--color-brown);
+}
+
+.game-store h3 {
+    color: var(--color-brown-dark);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.game-store h3 i {
+    color: var(--color-brown);
+}
+
+.store-description {
+    color: var(--color-gray);
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.95rem;
+}
+
+.store-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.store-item {
+    background-color: var(--color-light-gray);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-brown-lighter);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.store-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.store-item-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.store-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.store-item:hover .store-item-image img {
+    transform: scale(1.05);
+}
+
+.store-item-info {
+    padding: var(--spacing-md);
+}
+
+.store-item-info h4 {
+    color: var(--color-brown-dark);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.2rem;
+}
+
+.store-item-desc {
+    color: var(--color-gray);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing-md);
+}
+
+.store-item-price {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.original-price {
+    color: var(--color-gray);
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}
+
+.discount-price {
+    color: var(--color-brown);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.discount-badge {
+    background-color: #ff5252;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.store-item-coupon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--color-brown);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+.store-item-coupon i {
+    color: var(--color-brown-light);
+}
+
+.store-btn {
+    width: 100%;
+    padding: var(--spacing-sm);
+    background: linear-gradient(135deg, var(--color-brown), var(--color-brown-dark));
+    color: var(--color-white);
+    border: none;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.store-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--color-brown-dark), var(--color-brown));
+    transform: translateY(-2px);
+}
+
+.store-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.store-notice {
+    background-color: #e8f5e9;
+    border-left: 4px solid #4caf50;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-sm);
+    color: #2e7d32;
+    font-size: 0.9rem;
+}
+
+.store-notice i {
+    color: #4caf50;
+    margin-right: 8px;
+}
+
+/* 购买确认模态框 */
+.purchase-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.purchase-modal-content {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    max-width: 500px;
+    width: 90%;
+    box-shadow: var(--shadow-lg);
+    animation: slideUp 0.3s ease;
+}
+
+.purchase-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-brown-lighter);
+}
+
+.purchase-modal-title {
+    color: var(--color-brown-dark);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.purchase-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-gray);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.purchase-modal-close:hover {
+    background-color: var(--color-light-gray);
+    color: var(--color-brown);
+}
+
+.purchase-modal-body {
+    margin-bottom: var(--spacing-lg);
+}
+
+.purchase-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--color-light-gray);
+    border-radius: var(--radius-md);
+}
+
+.purchase-item-image {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.purchase-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.purchase-item-info {
+    flex: 1;
+}
+
+.purchase-item-info h4 {
+    color: var(--color-brown-dark);
+    margin-bottom: 5px;
+}
+
+.purchase-item-price {
+    color: var(--color-brown);
+    font-weight: 600;
+}
+
+.purchase-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-brown-lighter);
+}
+
+.purchase-coupon-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--color-brown);
+    font-weight: 600;
+}
+
+.purchase-coupon-info i {
+    color: var(--color-brown-light);
+}
+
+.purchase-confirm-btn {
+    padding: 10px 24px;
+    background: linear-gradient(135deg, var(--color-brown), var(--color-brown-dark));
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.purchase-confirm-btn:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--color-brown-dark), var(--color-brown));
+    transform: translateY(-2px);
+}
+
+.purchase-confirm-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* 响应式设计 - 游戏 */
+@media (max-width: 768px) {
+    .game-main {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .instruction-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-actions {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .plant-stats {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .shop-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .shop-item-icon {
+        margin: 0 auto;
+    }
+    
+    .store-items {
+        grid-template-columns: 1fr;
+    }
+    
+    .plant-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-actions {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .plant-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .store-item {
+        flex-direction: column;
+    }
+    
+    .store-item-image {
+        height: 150px;
+    }
+}
